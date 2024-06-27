@@ -102,13 +102,14 @@ for file in segmentation_files:
     # Inter-surface distances
     if dist_settings["inter"]:
         for label1, comparison in dist_settings["inter"].items():
-            graphname1 = config["work_dir"]+file_base+"_"+label1+".AVV_rh"+str(config["curvature_measurements"]["radius_hit"])+".gt"
+            # graphname1 = config["work_dir"]+file_base+"_"+label1+".AVV_rh"+str(config["curvature_measurements"]["radius_hit"])+".gt"
+            graphname1 = config["work_dir"]+file_base+"_"+label1+".scaled_cleaned.gt"
             if not os.path.isfile(graphname1):
                 print("No file found for "+graphname1)
                 print("Skipping all intersurface measurements for label "+label1)
                 continue
             for label2 in comparison:
-                graphname2 = config["work_dir"]+file_base+"_"+label2+".AVV_rh"+str(config["curvature_measurements"]["radius_hit"])+".gt"
+                graphname2 = config["work_dir"]+file_base+"_"+label2+".scaled_cleaned.gt"
                 if not os.path.isfile(graphname2):
                     print("No file found for "+graphname2)
                     print("Skipping comparison with "+label2)
